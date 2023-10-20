@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="captions">
+    <p>Connecting Dreams with Careers</p>
+    <p>Explore, Apply, Succeed</p>
+</div>
+
+<section>
+    <div class="card cardy" style="width: 80%;">
+        <div class="card-body">
+            <form class="row gy-2 gx-3 align-items-center" method="GET">
+                <div class="col-sm-4 fw-semibold">
+                    <label for="autoSizingInput" class="mb-2">What</label>
+                    {% render_field filter.form.title class="form-control" id="autoSizingInput" placeholder="Job title, skills, industry any keyword" %}
+                    <!-- <input type="text" class="form-control" id="autoSizingInput" placeholder="Job keyword"> -->
+                </div>
+                <div class="col-sm-3 fw-semibold">
+                    <label for="autoSizingSelect" class="mb-2">Where</label>
+                    {% render_field filter.form.state class="form-select"%}
+                </div>
+                <!-- <div class="col-sm-3 fw-semibold">
+                    {% render_field filter.form.job_type class="form-select"%}
+                </div> -->
+                <div class="col-sm-3 fw-semibold">
+                    <label for="autoSizingSelect" class="mb-2">Industry</label>
+                    {% render_field filter.form.industry class="form-select"%}
+                </div>
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary fw-bold mt-4 px-5 rounded-3 border-0">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <p class="col-md-8 fs-6 mt-4">
+            Welcome to GRA Job Portal! Search and get your dream job. We have hundreds of job offerings for you. Don't forget to leave a like when you get a job. Goodluck with your job hunt!
+    </p> -->
+    <!-- <a href="{% url 'job-listing' %}" class="btn btn-outline-primary fw-bold" type="button">More Jobs</a> -->
+</section>
+
+<div class="browse-jobs">
+    <h4 class="browse">Browse top paying jobs now</h4>
+    <!-- <a href="{% url 'job-listing' %}" class="btn btn-outline-primary fw-bold mb-5 rounded-3" type="button">More Jobs</a> -->
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for job in filter.qs %}
+    <!-- Card -->
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-header">
+                <h5 class="card-title fw-semibold">{{job.title}}</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text fw-light">Industry: {{job.industry}}</p>
+                <p class="card-text fw-light">Job Type: {{job.job_type}}</p>
+                <p class="card-text fw-light">Location: {{job.state}}, {{job.city}}</p>
+                <p class="card-text fw-semibold" style="color: #004080;">Salary: GHC {{job.salary}}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted fw-lighter">{{job.timestamp|naturaltime}}</small>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div> <br> <br>
+<div class="browse-jobs">
+<a href="{% url 'job-listing' %}" class="btn btn-outline-primary fw-bold mb-5 rounded-3" type="button">More Jobs</a>
+</div>
+
+<!-- <div class="row align-items-center">
+    <div class="col-md-10 mx-auto col-lg-2 mt-4">
+        <nav aria-label="...">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active" aria-current="page"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>  -->
+
+
+<footer class="footer-container text-dark py-3" style="background-color: #F6F8FA;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#" style="text-decoration: none; color: #7a7a7a;">Jobs</a></li>
+                    <li class="list-inline-item"><a href="#" style="text-decoration: none; color: #7a7a7a;">Terms</a></li>
+                    <li class="list-inline-item"><a href="#" style="text-decoration: none; color: #7a7a7a;">Sitemap</a></li>
+                    <li class="list-inline-item"><a href="#" style="text-decoration: none; color: #7a7a7a;">Locations</a></li>
+                </ul>
+            </div>
+            <div class="col" style="color: #7a7a7a;">
+                <p>&copy; 2023 Ghana Revenue Authority. All rights reserved.</p>
+            </div>
+            <div class="col">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#" style="font-size: 23px; color: #7a7a7a;"><i class="fab fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#" style="font-size: 23px; color: #7a7a7a;"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" style="font-size: 23px; color: #7a7a7a;"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a href="#" style="font-size: 23px; color: #7a7a7a;"><i class="fab fa-twitch"></i></a></li>
+                    <li class="list-inline-item"><a href="#" style="font-size: 23px; color: #7a7a7a;"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+{% endblock content %} 

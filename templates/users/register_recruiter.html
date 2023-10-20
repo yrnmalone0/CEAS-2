@@ -1,0 +1,55 @@
+{% extends 'users/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<form class="p-4 p-md-4 border rounded-3" method="POST" style="background-color: #fff;">
+    {% csrf_token %}
+    <!-- Form Title -->
+    <div class="form-title text-center">
+        <h4 class="fs-5 fw-bold mb-4">Get Hired, Get Started!</h4>
+    </div>
+
+    <!-- Email Field -->
+    <div class="form-floating mb-3">
+        <!-- <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com"> -->
+        {% render_field form.email class="form-control" placeholder="name@example.com" %}
+        <label for="floatingInput" class="text-muted">Email address</label>
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-floating mb-3">
+        {% render_field form.password1 class="form-control" placeholder="Enter Password" %}
+        <label for="floatingInput" class="text-muted">Enter Password</label>
+    </div>
+    <div class="form-floating mb-3">
+        {% render_field form.password2 class="form-control" placeholder="Confirm Password" %}
+        <label for="floatingInput" class="text-muted">Confirm Password</label>
+    </div>
+
+    <!-- Sign up button -->
+    <button class="w-100 btn btn-lg btn-primary fw-bold" type="submit">Sign Up</button>
+
+    <!-- Horizontal line divider with "or" -->
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-5">
+                <hr>
+            </div>
+            <div class="col-2 text-center text-muted">
+                or
+            </div>
+            <div class="col-5">
+                <hr>
+            </div>
+        </div>
+    </div>
+    
+    <div class="text-center fw-bold">
+        <small class="text-muted">Already have an account? 
+            <a href="{% url 'login' %}">Sign In</a>
+        </small>
+    </div>
+</form>
+
+{% endblock content %}

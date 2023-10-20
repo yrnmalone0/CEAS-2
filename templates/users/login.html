@@ -1,0 +1,51 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+
+<form class="py-4 p-md-4 border rounded-3 " method="POST" style="background-color: #fff;">
+    {% csrf_token %}
+    <!-- Form Title -->
+    <div class="form-title text-center">
+        <h4 class="fs-5 fw-bold">Ready to take the next step?</h4>
+        <p class="text-muted fw-medium border-bottom">Create an account or sign in.</p>
+
+        <p class="text-muted fw-normal" style="font-size: 12px;">By creating an account or logging in, you understand and agree to our <a href="#">Terms</a>. You also acknowledge our <a href="#">Cookie</a> and <a href="#">Privacy</a> policies.</p>
+    </div>
+   
+    <!-- Email Field -->
+    <div class="form-floating mb-3">
+        <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput" class="text-muted">Email address</label>
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-floating mb-3">
+        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword" class="text-muted">Password</label>
+    </div>
+
+    <!-- Sign In button -->
+    <button class="w-100 btn btn-lg btn-primary fw-bold" type="submit">Sign In</button>
+
+    <!-- Horizontal line divider with "or" -->
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-5">
+                <hr>
+            </div>
+            <div class="col-2 text-center text-muted">
+                or
+            </div>
+            <div class="col-5">
+                <hr>
+            </div>
+        </div>
+    </div>
+    
+    <div class="text-center fw-bold">
+        <small class="text-muted">Register as an Applicant <a href="{% url 'register-applicant' %}">Sign Up</a></small> <br>
+        <small class="text-muted">Register as a Recruiter <a href="{% url 'register-recruiter' %}">Sign Up</a></small>
+    </div>
+</form>
+
+{% endblock content %}
