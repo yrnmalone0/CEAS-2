@@ -56,7 +56,7 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a href="{% url 'update-resume' %}" class="nav-link {% if request.path == update_resume %} active {% endif %}">Create resume</a>
+                        <a href="{% url 'update-resume' %}" class="nav-link {% if request.path == update_resume %} active {% endif %}">Create Resume</a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
@@ -99,7 +99,7 @@
                     </li>
                 </ul>
 
-                <a href="{% url 'login' %}" class="btn btn-warning btn-sm fw-semibold">Log In</a>
+                <a href="{% url 'login' %}" class="text-decoration-none text-light fw-bold">Log In</a>
                 {% endif %}
             </div>
         </div>

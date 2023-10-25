@@ -7,30 +7,30 @@
     <div class="col-md-6">
         <div class="card mx-auto" style="width: 40rem;">
             <div class="card-body">
-                <h5 class="card-title mb-3">Create A Company</h5>
+                <h5 class="card-title mb-4 fw-bold fs-4 text-center">Create A Company</h5>
 
                 <form method="POST">
                     {% csrf_token %}
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Company Name</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">Company Name</label>
                         {% render_field form.name class="form-control" %}
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Established Date</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">Established Date</label>
                         {% render_field form.est_date class="form-control" %}
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">City</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">City</label>
                         {% render_field form.city class="form-control" %}
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">State</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">State</label>
                         {% render_field form.state class="form-control" %}
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary w-100 fw-bold mt-2">Create Company</button>
                 </form>
             </div>
 

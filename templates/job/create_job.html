@@ -4,56 +4,56 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-md-6">
-        <div class="card mx-auto" style="width: 40rem;">
+    <div class="col-md-6" style="margin-bottom: 4rem;">
+        <div class="card mx-auto" style="width: 40rem; background-color: #fafafa;">
             <div class="card-body">
-                <h5 class="card-title mb-3">Create A Job Ad</h5>
+                <h5 class="card-title mb-4 fw-bold fs-4 text-center">Create A Job Ad</h5>
 
                 <form method="POST">
                     {% csrf_token %}
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Job Title</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">Job Title</label>
                         {% render_field form.title class="form-control" %}
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Salary</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">Salary</label>
                         {% render_field form.salary class="form-control" %}
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">City</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">City</label>
                         {% render_field form.city class="form-control" %}
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">State</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">State</label>
                         {% render_field form.state class="form-control" %}
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Industry</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">Industry</label>
                         {% render_field form.industry class="form-control" %}
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Job Type</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">Job Type</label>
                         {% render_field form.job_type class="form-control" %}
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Job Requirements</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">Job Requirements</label>
                         {% render_field form.requirements|attr:"rows:2" class="form-control" %}
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Ideal Candidate</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">Ideal Candidate</label>
                         {% render_field form.ideal_candidate|attr:"rows:2" class="form-control" %}
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Is this Job Available</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">Is this Job Available</label>
                         {% render_field form.is_available class="form-check-input" %}
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary w-100 fw-bold">Create Job Ad</button>
                 </form>
             </div>
 

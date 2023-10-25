@@ -5,37 +5,37 @@
 
 <div class="row">
     <div class="col-md-6">
-        <div class="card mx-auto" style="width: 40rem;">
+        <div class="card mx-auto" style="width: 40rem; background-color: #fafafa;">
             <div class="card-body">
-                <h5 class="card-title mb-3">Create A Resume</h5>
+                <h5 class="card-title mb-4 fw-bold fs-4 text-center">Create A Resume</h5>
 
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">First Name</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">First Name</label>
                         {% render_field form.first_name class="form-control" %}
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Surname</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">Surname</label>
                         {% render_field form.surname class="form-control" %}
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Location</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">Location</label>
                         {% render_field form.location class="form-control" %}
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Job title</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">Job Title</label>
                         {% render_field form.job_title class="form-control" %}
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputEmail" class="form-label">Upload Resume</label>
+                        <label for="exampleInputEmail" class="form-label" style="font-weight: 600;">Upload Resume</label>
                         {% render_field form.upload_resume class="form-control" %}
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary w-100 fw-bold mt-2">Submit</button>
                 </form>
             </div>
 
